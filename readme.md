@@ -27,3 +27,21 @@ notion image
 - Leetcode uses `polling` when you submit a problem ie sends requests again and again what happened with my answer.
 
 > ws://localhost:8080/
+
+
+## Scaling ws servers
+- horizontal scaling .
+
+![alt text](image-1.png)
+
+## pubs , queues and redis 
+
+- queues 
+![alt text](image-2.png)
+
+## REdis
+- Redis is an open-source, `in-memory data structure` store, used as a database, cache, and message broker
+One of the key features of Redis is its ability to keep all data in memory, which allows for high performance and low latency access to data. 
+
+- RDB (Redis Database File): The RDB persistence performs point-in-time snapshots of your dataset at specified intervals. It creates a compact single-file representation of the entire Redis dataset. The snapshotting process can be configured to run at specified intervals, such as every X minutes if Y keys have changed.
+- AOF (Append Only File): The AOF persistence logs every write operation received by the server, appending each operation to a file. This file can then be replayed on startup to reconstruct the dataset. 
