@@ -45,3 +45,40 @@ One of the key features of Redis is its ability to keep all data in memory, whic
 
 - RDB (Redis Database File): The RDB persistence performs point-in-time snapshots of your dataset at specified intervals. It creates a compact single-file representation of the entire Redis dataset. The snapshotting process can be configured to run at specified intervals, such as every X minutes if Y keys have changed.
 - AOF (Append Only File): The AOF persistence logs every write operation received by the server, appending each operation to a file. This file can then be replayed on startup to reconstruct the dataset. 
+
+### Starting redis locally
+-  docker run --name my-redis -d -p 6379:6379 redis
+
+- Connecting to your container
+docker exec -it container_id /bin/bash
+
+- Connecting to the redis cli
+redis-cli
+similar to psql cli or pg library or prisma in case of postgres.
+
+## commands 
+
+- SELECT <db_index>	Switches to a specific database (default is 0).
+- FLUSHDB	Deletes all keys in the current database.
+- FLUSHALL	Deletes all keys in all databases
+- ping
+- SET mykey "Hello" 
+
+Getting data
+- GET mykey
+
+Deleting data
+- DEL mykey
+- EXPIRE key seconds
+- TTL key
+- HSET key field value	Sets a field in a hash.
+- HGET key field	Retrieves the value of a field in a hash.
+- HDEL key field	Deletes a field from a hash.
+
+- queue : {
+- LPUSH problems 1  
+- RPOP problems 
+}
+
+- BRPOP problems 0 
+block pop from problems till push happens for infinite time.
